@@ -7,7 +7,7 @@ import torch.nn as nn
 class BERTBaseUncased(nn.Module):
     def __init__(self):
         super(BERTBaseUncased, self).__init__()
-        self.bert = BertModel.from_pretrained('bert-base-uncased')
+        self.bert = BertModel.from_pretrained(config.BERT_PATH)
         self.bert_drop = nn.Dropout(0.3)
         self.out = nn.Linear(768, 1)
 
